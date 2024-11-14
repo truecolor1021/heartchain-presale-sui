@@ -1,59 +1,71 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
-const ProblemStatement: React.FC = () => {
+const CombinedSection: React.FC = () => {
+  const ref = useRef(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isInView) {
+          setIsInView(true);
+        }
+      },
+      {
+        root: null,
+        rootMargin: "0px 0px -10% 0px",
+        threshold: 0.1,
+      }
+    );
+
+    const element = ref.current;
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, [isInView]);
+
   return (
-    // <section className=" text-white py-16 px-4">
-    <section className="bg-gray-900 text-white py-16 px-4">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        {/* Left Side - Text Content */}
-        <div>
-          <h2 className="text-4xl font-bold mb-8">Problem Statement</h2>
-
-          {/* Summary of Problems and Solution */}
-          <p className="text-lg text-gray-300 leading-relaxed mb-8">
+    <section ref={ref} className="text-white pb-16">
+      {/* Problem Statement Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 1 }}
+        className="max-w-full mx-auto bg-gradient-to-r from-gray-800 to-blue-800 shadow-xl mb-16"
+      >
+        <div className="text-center">
+          <h2 className="text-4xl mb-40 pt-80 md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-transparent bg-clip-text">
+            Problem Statement
+          </h2>
+          <p className="text-gray-300 text-2xl md:text-3xl leading-relaxed max-w-4xl mx-auto">
             HeartChain Inu aims to solve key challenges in crypto-based online
-            matchmaking, including authenticity, privacy, and gender balance. By
-            using facially verified NFTs, our platform ensures users are who
+            matchmaking, including authenticity, privacy, and gender balance.{" "}
+            <br />
+            By using facially verified NFTs, our platform ensures users are who
             they claim to be, creating a trustworthy environment. We also
             address privacy concerns by implementing KYC without storing
             sensitive data, and we incentivize balanced participation through
             airdrops and dedicated support for female users.
           </p>
-
-          {/* Key Points */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-            <ul className="space-y-4 text-left">
-              <li>
-                <strong>Authenticity:</strong> Verified identities with NFTs
-                prevent profile misrepresentation.
-              </li>
-              <li>
-                <strong>Privacy:</strong> Minimal KYC with no data storage
-                ensures user privacy.
-              </li>
-              <li>
-                <strong>Gender Balance:</strong> Incentives encourage diverse
-                participation and balanced community growth.
-              </li>
-              <li>
-                <strong>Global Advisors:</strong> Local advisors support safe
-                and culturally aware matchmaking.
-              </li>
-            </ul>
-          </div>
         </div>
-
-        {/* Right Side - Image */}
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-40">
           <img
-            src="./landing/Picture6.png" // Replace with actual image path
+            src="./landing/Picture6.png"
             alt="HeartChain Inu Illustration"
-            className="w-800 h-auto max-w-sm rounded-lg"
+            className="w-full max-w-md md:max-w-2xl h-auto rounded-lg"
           />
         </div>
-      </div>
+      </motion.div>
+      {/* NFT Types Section */}
     </section>
   );
 };
 
-export default ProblemStatement;
+export default CombinedSection;

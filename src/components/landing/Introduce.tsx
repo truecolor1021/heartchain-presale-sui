@@ -1,83 +1,62 @@
-import React, { useRef, useState, useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 const BeautifulLeftToRightTitleSection = () => {
-  const ref = useRef(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-        } else {
-          setIsInView(false);
-        }
-      },
-      {
-        root: null,
-        rootMargin: "0px 0px -10% 0px", // Trigger when the bottom of the viewport is near the section
-        threshold: 0,
-      }
-    );
-
-    const element = ref.current;
-    if (element) {
-      observer.observe(element);
-    }
-
-    return () => {
-      if (element) {
-        observer.unobserve(element);
-      }
-    };
-  }, []);
-
   return (
-    <section className="bg-gray-900 text-white py-24 px-6">
-      {/* Title Section with Gradient and Scroll-triggered Animation (Left to Right) */}
+    <section
+      className="text-white mt-70 pt-24 pb-50 px-50 bg-opacity-0"
+      style={{
+        backgroundImage: "url('./landing/Picture1.png')",
+        backgroundSize: "1300px",
+        backgroundPositionX: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* Title Section */}
       <motion.div
-        ref={ref}
-        initial={{ opacity: 0, x: -100 }} // Starts off-screen to the left
-        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }} // Animates to original position
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
-        className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-center mb-12"
+        className="max-w-6xl text-center ml-auto mr-auto mb-16"
       >
-        <h2 className="bg-gradient-to-r from-blue-400 via-pink-500 to-yellow-500 text-transparent bg-clip-text">
-          Transforming the Future of Decentralized Finance
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-800 text-transparent bg-clip-text mb-50">
+          Introduction
         </h2>
       </motion.div>
 
-      {/* Content Section with Scroll-triggered Animation (Right to Left) */}
-      <motion.div
-        initial={{ opacity: 0, x: 100 }} // Starts off-screen to the right
-        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }} // Animates to original position
-        transition={{ duration: 1, delay: 0.2 }}
-        className="text-lg text-center max-w-3xl mx-auto mb-12 leading-relaxed"
-      >
-        <p>
-          At the heart of the decentralized world lies HeartChain Inu (HTCN), an
-          innovative cryptocurrency that seeks to disrupt traditional systems.
-          Built on blockchain technology and powered by NFTs, HTCN offers a
-          secure, transparent, and decentralized platform where users can truly
-          engage with meaningful digital assets, unlock unique opportunities,
-          and foster authentic connections.
-        </p>
-      </motion.div>
-
-      {/* Image with Scroll-triggered Animation (Right to Left) */}
-      <motion.div
-        initial={{ opacity: 0, x: 100 }} // Starts off-screen to the right
-        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }} // Animates to original position
-        transition={{ duration: 1, delay: 0.4 }}
-        className="flex justify-center"
-      >
-        <img
-          src="./landing/Picture2.png"
-          alt="HeartChain Inu Platform"
-          className="w-full h-auto max-w-2xl rounded-xl shadow-2xl"
-        />
-      </motion.div>
+      {/* Content Section */}
+      <div className="max-w-6xl mx-auto text-center ">
+        {/* Left Side - Text Content */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.1 }}
+          className="flex items-center justify-between rounded-xl col-span-2"
+        >
+          <div className="flex items-center">
+            <p className=" text-20 md:text-20 leading-relaxed text-gray-200">
+              HeartChain Inu (HTCN) is an innovative cryptocurrency project
+              designed to revolutionize the online matchmaking landscape by
+              leveraging the power of blockchain technology and non-fungible
+              tokens (NFTs). <br />
+              Built on the Sui blockchain, HeartChain Inu aims to create a
+              decentralized platform where users can connect, communicate, and
+              engage in meaningful relationships through unique digital assets.{" "}
+              <br />
+              The platform allows users to mint personalized NFTs that serve as
+              their digital identity within the ecosystem and means of contact
+              on the HeartChain Inu platform, enhancing authenticity and trust
+              in online interactions, gamifying the courting process, and
+              allowing individuals of both sexes to monetize the ability to chat
+              with each other and profit from their courtship experience via
+              staking rewards and NFT sales. The Platform will also offer the
+              option of local advisors to provide wisdom and guidance, helping
+              users avoid the myriad pitfalls that solo-flying “Passport bros”
+              often fall victim to.
+            </p>
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 };

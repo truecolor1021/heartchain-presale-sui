@@ -1,15 +1,52 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const HTCNEcosystem: React.FC = () => {
+  const ref = useRef(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isInView) {
+          setIsInView(true);
+        }
+      },
+      {
+        root: null,
+        rootMargin: "0px 0px -10% 0px",
+        threshold: 0.2,
+      }
+    );
+
+    const element = ref.current;
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, [isInView]);
+
   return (
-    <section className="bg-gray-900 text-white py-16 px-4">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
-        {/* Left Side - Text */}
-        <div className="md:w-1/2 space-y-6 text-center md:text-left">
-          <h2 className="text-4xl font-bold mb-4">
-            Utility and Use-Case of the HTCN Ecosystem
-          </h2>
-          <p className="text-lg text-gray-300 leading-relaxed">
+    <section className="text-white py-16 px-40 bg-gradient-to-r from-gray-800 to-blue-800 pt-100 pb-100">
+      <h2 className=" text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-transparent bg-clip-text text-center font-extrabold">
+        Utility and Use-Case of the HTCN Ecosystem
+      </h2>
+      <div
+        ref={ref}
+        className="max-w-6xl mt-100 mx-auto flex flex-col md:flex-row items-center "
+      >
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 1.2 }}
+          className="md:w-1/2 space-y-6 text-center md:text-left"
+        >
+          <p className="text-xl text-gray-300 leading-relaxed">
             The HTCN ecosystem is designed to address modern relationship
             challenges. Through blockchain-backed, verifiable connections, it
             offers an authentic and secure platform for users seeking meaningful
@@ -19,16 +56,20 @@ const HTCNEcosystem: React.FC = () => {
             and value of blockchain assets, making it a unique solution in the
             relationship space.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Right Side - Image */}
-        <div className="md:w-1/2 flex justify-center md:justify-end mt-8 md:mt-0">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 1.2, delay: 0.2 }}
+          className="md:w-1/2 flex justify-center md:justify-end mt-8 md:mt-0"
+        >
           <img
-            src="./landing/Picture17.png" // Replace with actual image path
+            src="./landing/Picture17.png"
             alt="HTCN Ecosystem Illustration"
             className="w-full h-auto max-w-md rounded-lg shadow-lg"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -69,7 +69,7 @@ const Presale: React.FC = () => {
 
   return (
     // <section className="bg-gradient-to-r to-blue-100 py-16">
-    <section className="bg-gray-900 text-white py-16 px-4">
+    <section className="text-white py-16 px-4">
       {/* Header */}
       <div className="text-center mb-10">
         <h2 className="text-4xl font-bold">Presale</h2>
