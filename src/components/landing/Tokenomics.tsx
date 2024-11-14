@@ -2,14 +2,14 @@ import React from "react";
 
 const Tokenomics: React.FC = () => {
   const distributionData = [
-    { name: "Staking Rewards", value: 39 },
+    { name: "Staking Rewards", value: 40 },
     { name: "Initial Liquidity", value: 30 },
     { name: "Ecosystem Development", value: 10 },
     { name: "Founders", value: 10 },
     { name: "Presale", value: 10 },
   ];
 
-  const COLORS = ["red", "black", "blue", "pink", "yellow"];
+  const COLORS = ["purple", "orange", "brown", "pink", "yellow"];
 
   const createPieChart = (data: typeof distributionData, colors: string[]) => {
     const radius = 100;
@@ -29,7 +29,7 @@ const Tokenomics: React.FC = () => {
           r={radius}
           fill="transparent"
           stroke={colors[index % colors.length]}
-          strokeWidth="20"
+          strokeWidth="40"
           strokeDasharray={`${circumference * percentage} ${circumference}`}
           strokeDashoffset={offset}
           strokeLinecap="round"
@@ -109,7 +109,12 @@ const Tokenomics: React.FC = () => {
         <h3 className="text-2xl mt-50 font-semibold text-white mb-6">
           Token Distribution
         </h3>
-        <svg width="300" height="300" viewBox="0 0 300 300">
+        <img
+          src="./landing/Picture13.png"
+          alt="HeartChain Inu Illustration"
+          className="w-full max-w-md md:max-w-2xl h-auto rounded-lg"
+        />
+        {/* <svg width="600" height="600" viewBox="0 0 300 300">
           {createPieChart(distributionData, COLORS)}
           <text
             x="150"
@@ -120,7 +125,7 @@ const Tokenomics: React.FC = () => {
           >
             100%
           </text>
-        </svg>
+        </svg> */}
         <div className="mt-8 flex justify-center flex-wrap gap-4">
           {distributionData.map((entry, index) => (
             <div key={index} className="flex items-center">
@@ -128,6 +133,7 @@ const Tokenomics: React.FC = () => {
                 className="w-4 h-4 inline-block mr-2 rounded-full"
                 style={{ backgroundColor: COLORS[index % COLORS.length] }}
               ></span>
+              
               <span className="text-gray-700">
                 {entry.name} - {entry.value}%
               </span>

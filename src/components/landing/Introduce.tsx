@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const BeautifulLeftToRightTitleSection = () => {
+const Introduce = () => {
   return (
     <section
       className="text-white mt-70 pt-24 pb-50 px-50 bg-opacity-0"
@@ -61,4 +61,4 @@ const BeautifulLeftToRightTitleSection = () => {
   );
 };
 
-export default BeautifulLeftToRightTitleSection;
+export default Introduce;

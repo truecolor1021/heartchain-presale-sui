@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const CombinedSection: React.FC = () => {
+const ProblemStatement: React.FC = () => {
   const ref = useRef(null);
   const [isInView, setIsInView] = useState(false);
 
@@ -68,4 +68,4 @@ const CombinedSection: React.FC = () => {
   );
 };
 
-export default CombinedSection;
+export default ProblemStatement;

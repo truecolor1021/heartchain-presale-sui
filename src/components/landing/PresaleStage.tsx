@@ -14,7 +14,7 @@ interface Testimonial {
   feedback: string;
 }
 
-const Presale: React.FC = () => {
+const PresaleStage: React.FC = () => {
   const presaleStages: PresaleStage[] = [
     {
       stage: "Stage 1",
@@ -146,4 +146,4 @@ const Presale: React.FC = () => {
   );
 };
 
-export default Presale;
+export default PresaleStage;

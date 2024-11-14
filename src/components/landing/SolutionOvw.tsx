@@ -32,7 +32,7 @@ const SolutionOvw: React.FC = () => {
   }, [isInView]);
 
   return (
-    <section ref={ref} className="text-white pb-16">
+    <section ref={ref} className="text-white px-50 pb-16">
       {/* Problem Statement Section */}
 
       <h2 className="text-4xl mt-80 md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-800 text-transparent text-center bg-clip-text mb-10">
@@ -48,9 +48,9 @@ const SolutionOvw: React.FC = () => {
         >
           <div className="flex justify-center md:w-1/3 mb-6 md:mb-0">
             <img
-              src="./landing/Picture7.png"
+              src="./landing/Picture100.png"
               alt="Flirt NFT"
-              className="w-full max-w-xs h-auto rounded-lg"
+              className="w-500 max-w-xs h-auto rounded-lg"
             />
           </div>
           <div className="md:w-2/3 text-center md:text-left">
@@ -79,7 +79,7 @@ const SolutionOvw: React.FC = () => {
         >
           <div className="flex justify-center md:w-1/3 mb-6 md:mb-0">
             <img
-              src="./landing/Picture20.png"
+              src="./landing/Picture8.png"
               alt="Fly Me to the Moon NFT"
               className="w-full max-w-xs h-auto rounded-lg"
             />
