@@ -91,14 +91,14 @@ const Tokenomics: React.FC = () => {
           <img
             src="./landing/Picture101.png"
             alt="HeartChain Inu Illustration"
-            className="w-full md:max-w-2xl h-auto mx-auto rounded-lg"
+            className="w-11/12 md:max-w-2xl h-auto mx-auto rounded-lg"
           />
         </div>
         <div className="w-full xl:w-1/2">
           <img
             src="./landing/Picture105png.png"
             alt="HTCN Token"
-            className="w-full md:max-w-2xl mx-auto h-auto rounded-lg"
+            className="w-11/12 md:max-w-2xl mx-auto h-auto rounded-lg"
           />
         </div>
       </motion.div>

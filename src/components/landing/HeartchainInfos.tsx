@@ -3,7 +3,18 @@ import { motion } from "framer-motion";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" } },
+};
+
+// Generate random directions for each card
+const getRandomDirection = () => {
+  const directions = [
+    { x: "-100%", y: "0%" }, // From left
+    { x: "100%", y: "0%" }, // From right
+    { x: "0%", y: "-100%" }, // From top
+    { x: "0%", y: "100%" }, // From bottom
+  ];
+  return directions[Math.floor(Math.random() * directions.length)];
 };
 
 const cardData = [
@@ -49,7 +60,7 @@ const cardData = [
 const HeartChainInfo: React.FC = () => {
   return (
     <motion.section
-      className="px-6 py-16 rounded-xl  mb-50 max-w-screen-2xl mx-auto text-center"
+      className="px-6 py-16 rounded-xl mb-50 max-w-screen-xl mx-auto text-center"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.25 }}
@@ -57,36 +68,52 @@ const HeartChainInfo: React.FC = () => {
     >
       {/* Header */}
       <motion.h2
-        className=" text-5xl md:text-5xl mt-50 lg:text-6xl bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-transparent bg-clip-text text-center font-extrabold"
+        className="text-5xl md:text-5xl mt-80 lg:text-6xl bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-transparent bg-clip-text text-center font-extrabold"
         variants={fadeInUp}
       >
         HeartChain Inu
       </motion.h2>
 
       {/* Cards Container */}
-      <div className="text-center mt-5 md:30  py-12 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        {cardData.map((card, index) => (
-          <motion.div
-            key={index}
-            className="group mt-30 relative cursor-pointer overflow-hidden bg-white rounded-2xl px-6 pt-20 pb-16 ring-1 ring-gray-900/5 transition-all duration-500 transform hover:scale-105"
-            variants={fadeInUp}
-          >
-            {/* Image */}
-            <div className="relative z-10 flex flex-col items-center">
-              <img
-                src={card.image}
-                alt={card.title}
-                className="h-auto w-11/12 rounded-lg mb-6 object-cover shadow-md group-hover:scale-110 transition-transform duration-300"
-              />
-              <h3 className="text-2xl font-semibold text-blue-800 group-hover:text-purple-600 mb-4">
-                {card.title}
-              </h3>
-              <p className="text-gray-700 leading-relaxed group-hover:text-gray-900">
-                {card.description}
-              </p>
-            </div>
-          </motion.div>
-        ))}
+      <div className="text-center mt-5 md:30 py-12 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        {cardData.map((card, index) => {
+          const direction = getRandomDirection();
+          return (
+            <motion.div
+              key={index}
+              className="group mt-30 relative cursor-pointer overflow-hidden bg-white rounded-2xl px-6 pt-20 pb-16 ring-1 ring-gray-900/5 transition-all duration-500 transform hover:scale-105"
+              initial={{
+                opacity: 0,
+                x: direction.x,
+                y: direction.y,
+              }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                y: 0,
+                transition: { duration: 1, ease: "easeOut" },
+              }}
+            >
+              {/* Image */}
+              <div className="relative z-10 flex flex-col items-center">
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="h-auto w-11/12 rounded-lg mb-6 object-cover shadow-md group-hover:scale-105 transition-transform duration-300"
+                />
+                <motion.h3
+                  className="text-2xl font-semibold text-blue-800 group-hover:text-purple-600 mb-4"
+                  variants={fadeInUp}
+                >
+                  {card.title}
+                </motion.h3>
+                <p className="text-gray-700 leading-relaxed group-hover:text-gray-900 text-start p-20">
+                  {card.description}
+                </p>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </motion.section>
   );
