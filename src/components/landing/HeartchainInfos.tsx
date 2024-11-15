@@ -81,7 +81,9 @@ const HeartChainInfo: React.FC = () => {
           return (
             <motion.div
               key={index}
-              className="group mt-30 relative cursor-pointer overflow-hidden bg-white rounded-2xl px-6 pt-20 pb-16 ring-1 ring-gray-900/5 transition-all duration-500 transform hover:scale-105"
+              className={`group mt-30 relative cursor-pointer overflow-hidden bg-white rounded-2xl px-6 pt-20 pb-16 ring-1 ring-gray-900/5 transition-all duration-500 transform hover:scale-105 ${
+                card.title === "Conclusion" ? "sm:col-span-2 lg:col-span-1" : ""
+              }`} // Apply different class for "Conclusion" card
               initial={{
                 opacity: 0,
                 x: direction.x,
