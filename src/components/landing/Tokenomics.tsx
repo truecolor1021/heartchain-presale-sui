@@ -9,7 +9,7 @@ const fadeInUp = {
 const Tokenomics: React.FC = () => {
   return (
     <motion.section
-      className="text-gray-800 py-16 px-4 max-full"
+      className="text-gray-800 py-16 px-4 max-w-screen-2xl mx-auto"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.25 }}
@@ -50,10 +50,10 @@ const Tokenomics: React.FC = () => {
           ].map((card, index) => (
             <motion.div
               key={index}
-              className="group relative cursor-pointer overflow-hidden bg-white rounded-2xl mx-auto px-6 pt-20 pb-16 shadow-2xl ring-1 ring-gray-900/5 transition-all duration-500 transform hover:scale-105 justify-center flex flex-wrap hover:shadow-3xl min-w-10 w-full xl:max-w-lg max-w-2xl"
+              className="group relative cursor-pointer overflow-hidden bg-white rounded-2xl mx-auto px-6 pt-20 pb-16 shadow-2xl ring-1 ring-gray-900/5 transition-all duration-500 transform hover:scale-105 justify-center flex flex-wrap hover:shadow-3xl min-w-10 w-full xl:max-w-sm max-w-2xl"
               variants={fadeInUp}
             >
-              <span className="absolute top-0 left-0 z-0 h-32 w-52 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-75 transition-all duration-500 transform group-hover:scale-[20]" />
+              <span className="absolute top-0 left-0 z-0 h-42 w-42 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-75 transition-all duration-500 transform group-hover:scale-[20]" />
               <div className="relative z-0 mx-auto max-w-xs">
                 <span className="grid h-50 w-50 place-items-center rounded-full bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-500 transform group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-yellow-500">
                   <svg
@@ -72,7 +72,7 @@ const Tokenomics: React.FC = () => {
                   </svg>
                 </span>
                 <div className="space-y-6 pt-6 text-lg leading-8 text-gray-700 transition-all duration-500 group-hover:text-white">
-                  <h3 className="text-2xl font-semibold text-gray-800 group-hover:text-white">
+                  <h3 className="text-2xl  text-blue-800 font-semibold group-hover:text-white">
                     {card.title}
                   </h3>
                   <p className="font-medium">{card.description}</p>

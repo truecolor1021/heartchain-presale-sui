@@ -25,7 +25,7 @@ const Introduce = () => {
       </motion.div>
 
       {/* Content Section */}
-      <div className="max-w-6xl mx-auto text-center ">
+      <div className="max-w-6xl mt-40 mx-auto text-center ">
         {/* Left Side - Text Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
