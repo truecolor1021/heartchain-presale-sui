@@ -32,13 +32,13 @@ const HTCNEcosystem: React.FC = () => {
   }, [isInView]);
 
   return (
-    <section className="text-white py-16 px-40 bg-gradient-to-r from-gray-800 to-blue-800 pt-100 pb-100">
+    <section className="text-white py-16 px-10 md:px-50 bg-gradient-to-r from-gray-800 to-blue-800 pt-100 pb-100">
       <h2 className=" text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-transparent bg-clip-text text-center font-extrabold">
         Utility and Use-Case of the HTCN Ecosystem
       </h2>
       <div
         ref={ref}
-        className="max-w-6xl mt-100 mx-auto flex flex-col md:flex-row items-center "
+        className="max-w-6xl md:mt-100 mt-30 mx-auto flex flex-col md:flex-row items-center "
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -46,7 +46,7 @@ const HTCNEcosystem: React.FC = () => {
           transition={{ duration: 1.2 }}
           className="md:w-1/2 space-y-6 text-center md:text-left"
         >
-          <p className="text-xl text-gray-300 leading-relaxed">
+          <p className="text-17 text-gray-300 leading-relaxed">
             The HTCN ecosystem is designed to address modern relationship
             challenges. Through blockchain-backed, verifiable connections, it
             offers an authentic and secure platform for users seeking meaningful

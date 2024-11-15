@@ -14,7 +14,6 @@ import BigNumber from "bignumber.js";
 import { convertFloat, convertTimestampToDateFormat } from "../../utils";
 import { useStakings } from "../../context";
 import { useLocation } from "react-router-dom";
-import { ClassNames } from "@emotion/react";
 
 export const LnuPresale = () => {
   const { currentAccount } = useWalletKit();

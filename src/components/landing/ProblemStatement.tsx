@@ -32,7 +32,7 @@ const ProblemStatement: React.FC = () => {
   }, [isInView]);
 
   return (
-    <section ref={ref} className="text-white pb-16">
+    <section ref={ref} className="text-white pb-16 ">
       {/* Problem Statement Section */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -41,10 +41,10 @@ const ProblemStatement: React.FC = () => {
         className="max-w-full mx-auto bg-gradient-to-r from-gray-800 to-blue-800 shadow-xl mb-16"
       >
         <div className="text-center">
-          <h2 className="text-4xl mb-40 pt-80 md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-transparent bg-clip-text">
+          <h2 className="text-5xl mb-40 pt-80 md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-transparent bg-clip-text">
             Problem Statement
           </h2>
-          <p className="text-gray-300 text-2xl md:text-3xl leading-relaxed max-w-4xl mx-auto">
+          <p className="text-gray-300 px-10 md:px-50 text-17 md:text-2xl leading-relaxed max-w-4xl mx-auto">
             HeartChain Inu aims to solve key challenges in crypto-based online
             matchmaking, including authenticity, privacy, and gender balance.{" "}
             <br />

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  cursor: url(../../../public/landing/cursor.png) 4 1, pointer !important;
+}
+
 @font-face {
   font-family: "SF Pro Display"; /*Can be any text*/
   src: local("ProductSansInfanity"),

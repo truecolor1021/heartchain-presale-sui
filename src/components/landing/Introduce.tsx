@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Introduce = () => {
   return (
     <section
-      className="text-white mt-70 pt-24 pb-50 px-50 bg-opacity-0"
+      className="text-white mt-70 pt-24 pb-50 px-10 md:px-50 bg-opacity-0"
       style={{
         backgroundImage: "url('./landing/Picture1.png')",
         backgroundSize: "1300px",
@@ -19,7 +19,7 @@ const Introduce = () => {
         transition={{ duration: 1.2 }}
         className="max-w-6xl text-center ml-auto mr-auto mb-16"
       >
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-800 text-transparent bg-clip-text mb-50">
+        <h2 className=" text-5xl md:text-5xl lg:text-6xl bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-transparent bg-clip-text text-center font-extrabold">
           Introduction
         </h2>
       </motion.div>
@@ -31,10 +31,10 @@ const Introduce = () => {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.1 }}
-          className="flex items-center justify-between rounded-xl col-span-2"
+          className=" rounded-xl "
         >
           <div className="flex items-center">
-            <p className=" text-20 md:text-20 leading-relaxed text-gray-200">
+            <p className=" text-17 leading-relaxed text-gray-200">
               HeartChain Inu (HTCN) is an innovative cryptocurrency project
               designed to revolutionize the online matchmaking landscape by
               leveraging the power of blockchain technology and non-fungible

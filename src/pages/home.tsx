@@ -11,6 +11,7 @@ import ProblemStatement from "../components/landing/ProblemStatement";
 const HomePage = () => {
   return (
     <>
+      {/* <LnuPresale></LnuPresale> */}
       <Introduce />
 
       <ProblemStatement />

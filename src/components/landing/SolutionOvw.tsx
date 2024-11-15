@@ -32,16 +32,16 @@ const SolutionOvw: React.FC = () => {
   }, [isInView]);
 
   return (
-    <section ref={ref} className="text-white px-50 pb-16">
+    <section ref={ref} className="text-white px-10 md:px-50 pb-16">
       {/* Problem Statement Section */}
 
-      <h2 className="text-4xl mt-80 md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-800 text-transparent text-center bg-clip-text mb-10">
+      <h4 className=" text-5xl mt-50 md:text-6xl lg:text-7xl bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-transparent bg-clip-text text-center font-extrabold">
         Solution Overview
-      </h2>
+      </h4>
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Flirt NFT Card */}
         <motion.div
-          className="p-4 rounded-xl mt-40 flex flex-col md:flex-row items-center gap-6"
+          className="p-4 flex flex-col md:flex-row items-center gap-6"
           initial={{ opacity: 0, x: -100 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1, delay: 0.2 }}
@@ -50,14 +50,14 @@ const SolutionOvw: React.FC = () => {
             <img
               src="./landing/Picture100.png"
               alt="Flirt NFT"
-              className="w-500 max-w-xs h-auto rounded-lg"
+              className="w-500 max-w-xl h-auto rounded-lg"
             />
           </div>
           <div className="md:w-2/3 text-center md:text-left">
-            <h3 className="text-3xl font-bold mb-4 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-transparent bg-clip-text">
+            <h2 className=" text-2xl md:text-3xl mb-20 lg:text-4xl bg-gradient-to-r from-purple-200 via-pink-100 to-blue-500 text-transparent bg-clip-text text-center font-extrabold">
               Flirt NFT
-            </h3>
-            <p className="text-gray-300 text-xl leading-relaxed">
+            </h2>
+            <p className="text-gray-300 text-17 leading-relaxed">
               This NFT unlocks the ability for the buying user to chat with the
               issuing user and serves as the building block of social activity
               on the platform. It serves as a key that grants access to direct
@@ -72,7 +72,7 @@ const SolutionOvw: React.FC = () => {
         </motion.div>
         {/* Fly Me to the Moon NFT Card */}
         <motion.div
-          className="p-4 rounded-xl  flex flex-col mb-40 md:flex-row-reverse items-center gap-6"
+          className="border-solid border-t-4 border-blue-500 p-4 md:mt-0 mt-100 flex flex-col mb-40 md:flex-row-reverse items-center gap-6"
           initial={{ opacity: 0, x: 100 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1, delay: 0.4 }}
@@ -81,14 +81,14 @@ const SolutionOvw: React.FC = () => {
             <img
               src="./landing/Picture8.png"
               alt="Fly Me to the Moon NFT"
-              className="w-full max-w-xs h-auto rounded-lg"
+              className="w-500 max-w-xl h-auto rounded-lg"
             />
           </div>
           <div className="md:w-2/3 text-center md:text-left">
-            <h3 className="text-3xl font-bold mb-4 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-transparent bg-clip-text">
+            <h2 className=" text-2xl md:text-3xl mb-20 lg:text-4xl bg-gradient-to-r  from-purple-200 via-pink-100 to-blue-500 text-transparent bg-clip-text text-center font-extrabold">
               Fly Me to the Moon NFT
-            </h3>
-            <p className="text-gray-300 text-xl leading-relaxed">
+            </h2>
+            <p className="text-gray-300 text-17 leading-relaxed">
               The more exclusive type of NFT on our platform. FM2TMs have
               multiple use cases and are the only mechanism for staking HTCN. A
               couple that meets on our platform can mint one as a memento of how
